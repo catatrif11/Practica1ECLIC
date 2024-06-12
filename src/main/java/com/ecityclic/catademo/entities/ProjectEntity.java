@@ -1,6 +1,8 @@
 package com.ecityclic.catademo.entities;
 
 import java.io.Serializable;
+import java.util.List;
+import java.util.Set;
 import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
@@ -15,21 +17,17 @@ import lombok.ToString;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name="employee")
-public class EmployeeEntity implements Serializable {
+@Table(name="projects")
+public class ProjectEntity implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-
-    private String name;
+    @Column(name="id_project")
+    private long idProject;
     
-    private String dni;
+    @Column(name="name")
+    private String projectName;
     
-    @Column(name="project_id")
-    private long projectId;
-
-    @ManyToOne
-    @JoinColumn(name = "id_project", referencedColumnName="id_project")
-    private ProjectEntity project;
+    @OneToMany(mappedBy = "project")
+    private Set<EmployeeEntity> employees;
 }
