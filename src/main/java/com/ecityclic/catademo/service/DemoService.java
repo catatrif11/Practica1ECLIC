@@ -6,7 +6,8 @@ import org.springframework.stereotype.Service;
 
 import com.ecityclic.catademo.entities.EmployeeEntity;
 import com.ecityclic.catademo.repository.EmployeeRepository;
-
+import com.ecityclic.catademo.entities.ProjectEntity;
+import com.ecityclic.catademo.repository.ProjectRepository;
 @Service
 public class DemoService extends BaseService<EmployeeEntity>{
 	
@@ -25,6 +26,11 @@ public class DemoService extends BaseService<EmployeeEntity>{
 	
 	public EmployeeEntity deleteEmployeeById(long id) {
 		return ((EmployeeRepository)this.repository).deleteById(id);
+	}
+	
+	public List<EmployeeEntity> getEmployeesFromProject(String name){
+		List<EmployeeEntity> ee= ((EmployeeRepository)this.repository).findEmployeesByProjectName(name);
+		return ee;
 	}
 	
 }
