@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ecityclic.catademo.entities.EmployeeEntity;
+import com.ecityclic.catademo.entities.ProjectEntity;
 import com.ecityclic.catademo.helper.Helper;
 
 import lombok.extern.slf4j.Slf4j;
@@ -55,6 +56,12 @@ public class Controller {
 		return ResponseEntity.ok(helper.deleteEmployee(id)); // ES POT MODIFICAR PER UTILIZAR ALTRES ATRIBUTS, COM EL NOM O EL DNI
 		// COM UTILITZEM EL ID (QUE ÉS ÚNIC) ENS ASSEGUREM QUE BORREM NOMÈS UN
 	} 
+	
+	@GetMapping("/getAllEmployees/{name}")
+	public ResponseEntity<List<EmployeeEntity>> getEmployeesFromProject(@PathVariable String name){
+		return ResponseEntity.ok(helper.getEmployeesFromProject(name));
+	}
+	
 	
 	
 	

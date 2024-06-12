@@ -35,6 +35,10 @@ public class Helper {
 		return service.deleteEmployeeById(id);
 		
 	}
+	
+	public List<EmployeeEntity> getEmployeesFromProject(String name){
+		return service.getEmployeesFromProject(name);
+	}
 		
 	
 }
