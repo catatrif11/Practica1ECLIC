@@ -28,5 +28,4 @@ public interface EmployeeRepository extends JpaRepository<EmployeeEntity, Long> 
 				+ "WHERE p.projectName = :projectName)")
 	List<EmployeeEntity> findEmployeesByProjectName(@Param("projectName") String projectName);
 
-	
 }
