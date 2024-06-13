@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ecityclic.catademo.entities.EmployeeEntity;
+import com.ecityclic.catademo.entities.EmployeeInfoEntity;
 import com.ecityclic.catademo.entities.ProjectEntity;
 import com.ecityclic.catademo.helper.Helper;
 
@@ -63,6 +64,10 @@ public class Controller {
 	}
 	
 	
-	
+	@GetMapping("/getEmployeeInfoByDni/{dni}") 
+	public ResponseEntity<EmployeeInfoEntity> getEmployeeInfoByDni(@PathVariable String dni)  { 
+		return ResponseEntity.ok(helper.getEmployeeInfoByDni(dni));
+
+	}	
 	
 }
