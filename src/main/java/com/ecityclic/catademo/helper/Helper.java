@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.ecityclic.catademo.entities.EmployeeEntity;
+import com.ecityclic.catademo.entities.EmployeeInfoEntity;
+import com.ecityclic.catademo.service.EmployeeInfoService;
 import com.ecityclic.catademo.service.DemoService;
 
 @Component
@@ -18,6 +20,9 @@ public class Helper {
 	
 	@Autowired
 	private DemoService service;
+	
+	@Autowired
+	private EmployeeInfoService employeeInfoService;
 
 	public EmployeeEntity getEmployee(long id) {
 		return service.getEmployeeEntity(id);
@@ -40,5 +45,8 @@ public class Helper {
 		return service.getEmployeesFromProject(name);
 	}
 		
+	public EmployeeInfoEntity getEmployeeInfoByDni(String dni) {
+		return employeeInfoService.getEmployeeInfoByDni(dni);
+	}
 	
 }

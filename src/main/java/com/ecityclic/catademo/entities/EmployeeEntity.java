@@ -33,4 +33,10 @@ public class EmployeeEntity implements Serializable {
     @ManyToOne
     @JoinColumn(name = "id_project", referencedColumnName="id_project" )
     private ProjectEntity project;
+    
+    
+    
+    @OneToOne
+    @JoinColumn(referencedColumnName="id" )
+    private EmployeeInfoEntity eeinfo;
 }

@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.ecityclic.catademo.entities.EmployeeEntity;
+import com.ecityclic.catademo.entities.EmployeeInfoEntity;
+import com.ecityclic.catademo.repository.EmployeeInfoRepository;
 import com.ecityclic.catademo.repository.EmployeeRepository;
 import com.ecityclic.catademo.entities.ProjectEntity;
 import com.ecityclic.catademo.repository.ProjectRepository;
