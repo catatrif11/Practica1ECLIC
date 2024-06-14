@@ -26,17 +26,10 @@ public class EmployeeEntity implements Serializable {
     
     private String dni;
     
-    
-    @Column(name="project_id", nullable = true,  columnDefinition = "VARCHAR(100) DEFAULT NULL ")
-    private long projectId;
-
     @ManyToOne
-    @JoinColumn(name = "id_project", referencedColumnName="id_project" )
     private ProjectEntity project;
     
     
-    
     @OneToOne
-    @JoinColumn(referencedColumnName="id" )
     private EmployeeInfoEntity eeinfo;
 }

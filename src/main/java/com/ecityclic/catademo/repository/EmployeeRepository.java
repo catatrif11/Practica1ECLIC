@@ -20,12 +20,18 @@ public interface EmployeeRepository extends JpaRepository<EmployeeEntity, Long> 
 	public EmployeeEntity deleteById(long id); // 
 	
 	
-	@Query("SELECT e "
-			+ "FROM EmployeeEntity e "
-			+ "WHERE e.projectId IN "
-			+ "(SELECT p.idProject"
-				+ " FROM ProjectEntity p "
-				+ "WHERE p.projectName = :projectName)")
-	List<EmployeeEntity> findEmployeesByProjectName(@Param("projectName") String projectName);
-
+//	@Query("SELECT e "
+//			+ "FROM EmployeeEntity e "
+//			+ "WHERE e.projectId IN "
+//			+ "(SELECT p.idProject"
+//				+ " FROM ProjectEntity p "
+//				+ "WHERE p.projectName = :projectName)")
+//	List<EmployeeEntity> findEmployeesByProjectName(@Param("projectName") String projectName);
+	
+	
+	
+	// CONSULTES ENTRE DOS TAULES DIFERENTS NOMENCLATURA:
+	// FindBy + "NOM_TAULA_RELACIONADA" + "COLUMNA" /||+ AND + "ALTRES_CONSULTES"
+	
+	List<EmployeeEntity> findByProjectProjectName(@Param("name") String name);
 }
