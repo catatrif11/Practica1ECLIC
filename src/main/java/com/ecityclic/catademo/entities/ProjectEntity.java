@@ -27,7 +27,7 @@ public class ProjectEntity implements Serializable {
     
     @Column(name="name")
     private String projectName;
-    
+   
     @OneToMany(mappedBy = "project")
     private Set<EmployeeEntity> employees;
 }

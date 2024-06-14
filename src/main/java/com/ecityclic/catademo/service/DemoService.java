@@ -31,7 +31,7 @@ public class DemoService extends BaseService<EmployeeEntity>{
 	}
 	
 	public List<EmployeeEntity> getEmployeesFromProject(String name){
-		List<EmployeeEntity> ee= ((EmployeeRepository)this.repository).findEmployeesByProjectName(name);
+		List<EmployeeEntity> ee= ((EmployeeRepository)this.repository).findByProjectProjectName(name);
 		return ee;
 	}
 	
