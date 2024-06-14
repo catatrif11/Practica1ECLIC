@@ -21,8 +21,9 @@ import com.ecityclic.catademo.helper.Helper;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
+@RequestMapping("/Employee")
 @Slf4j
-public class Controller {	
+public class EmployeeController {	
 	
 
 	@Autowired
@@ -58,7 +59,7 @@ public class Controller {
 		// COM UTILITZEM EL ID (QUE ÉS ÚNIC) ENS ASSEGUREM QUE BORREM NOMÈS UN
 	} 
 	
-	@GetMapping("/getAllEmployees/{name}")
+	@GetMapping("/getAll/{name}")
 	public ResponseEntity<List<EmployeeEntity>> getEmployeesFromProject(@PathVariable String name){
 		return ResponseEntity.ok(helper.getEmployeesFromProject(name));
 	}
